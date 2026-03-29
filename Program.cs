@@ -7,6 +7,20 @@ public class HaloGeneric
         Console.WriteLine("Halo User " + user.ToString());
     }
 }
+public class DataGeneric<T>
+{
+    private T data;
+
+    public DataGeneric(T data)
+    {
+        this.data = data;
+    }
+
+    public void printData()
+    {
+        Console.WriteLine("Data yang tersimpan adalah: " + data);
+    }
+}
 
 public class Program
 {
@@ -17,6 +31,13 @@ public class Program
 
         HaloGeneric halo = new HaloGeneric();
         halo.SapaUser(usname);
+
+
+        Console.Write("Masukkan NIM: ");
+        string nim = Console.ReadLine();
+
+        DataGeneric<string> data = new DataGeneric<string>(nim);
+        data.printData();
     }
 }
 
